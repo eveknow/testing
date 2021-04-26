@@ -217,3 +217,6 @@ FindElements: dùng để tìm ra 1 list gồm nhiều element cùng loạ
 | webDriver: AccessNewUrl | thực hiện truy cập vào 1 đường link mới |
 | description: | ghi lại miêu tả action cho bạn dễ hiểu |
 | newUrl| Khai báo đường link mà bạn muốn truy cập |
+
+
+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

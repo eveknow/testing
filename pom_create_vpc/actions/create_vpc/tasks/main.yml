@@ -9,7 +9,7 @@ hooks:
       actions:
         - action: Click 
     - webDriver: FindElement
-      description: 'Click vào Action' 
+      description: 'Fill Name' 
       webElement: 
         by: ByCSSSelector #tìm kí tự mong muốn
         value: 'input[ng-model="createNetworkRequest.name"]'
@@ -18,7 +18,7 @@ hooks:
         - action: Sendkeys
           value : 'VPC-Random-11'
     - webDriver: FindElement
-      description: 'Click Resize VM trong Action' 
+      description: 'Fill Cidr' 
       webElement: 
         by: ByCSSSelector #tìm kí tự mong muốn
         value: 'input[ng-model="createNetworkRequest.cidr"]'
