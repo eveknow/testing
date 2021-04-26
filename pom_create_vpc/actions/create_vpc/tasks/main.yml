@@ -26,7 +26,7 @@ hooks:
       actions:
         - action: Sendkeys #đánh chữ vào ô input
           value : '10.113.0.0'
-    - webDriver: FindElements
+    - webDriver: FindElement
       description: 'AcceptCreate'
       webElement:
         by: ByCSSSelector
