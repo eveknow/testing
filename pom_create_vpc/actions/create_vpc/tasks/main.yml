@@ -1,0 +1,36 @@
+hooks:
+  checkResizeVM:
+    - webDriver: FindElement
+      description: 'Click Create Network' 
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: '[ng-click="createNetwork()"]'
+        ignored: True
+      actions:
+        - action: Click 
+    - webDriver: FindElement
+      description: 'Click vào Action' 
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: 'input[ng-model="createNetworkRequest.name"]'
+        ignored: True
+      actions:
+        - action: Sendkeys
+          value : 'VPC-Random-11'
+    - webDriver: FindElement
+      description: 'Click Resize VM trong Action' 
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: 'input[ng-model="createNetworkRequest.cidr"]'
+        ignored: True
+      actions:
+        - action: Sendkeys #đánh chữ vào ô input
+          value : '10.113.0.0'
+    - webDriver: FindElements
+      description: 'AcceptCreate'
+      webElement:
+        by: ByCSSSelector
+        value: '[ng-click="acceptCreateNetwork()"]'
+        ignored: True
+      actions:
+        - action: Click

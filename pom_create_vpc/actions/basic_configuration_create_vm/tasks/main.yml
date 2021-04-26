@@ -1,0 +1,58 @@
+hooks:
+  basicConfiguration:
+    - webDriver: Title # lấy tiêu đề
+      description: 'Lấy Tilte của Pages'
+    - webDriver: FindElement
+      description: 'Tìm và Điền Tên Cho VM'
+      webElement:
+        by: ByCSSSelector
+        value: 'input[ng-model="createServerRequest.name"]'
+        ignored: True
+      actions:
+        - action: Sendkeys #đánh chữ vào ô input
+          value : 'Ubuntu-SE-Random'
+    - webDriver: FindElement
+      description: 'Chọn Type Image'
+      webElement:
+        by: ByCSSSelector
+        value: '[ng-click="selectOsImageArea()"]'
+        ignored: True
+      actions:
+        - action: Click
+    - webDriver: FindElement
+      description: 'Chọn hệ điều hành Ubuntu'
+      webElement:
+        by: ByXPATH
+        value: '//div[contains(text(),"Ubuntu")]'
+        ignored: True
+      actions:
+        - action: Click
+    - webDriver: FindElement
+      description: 'List Version của Ubuntu'
+      webElement:
+        by: ByCSSSelector
+        value: '#os-only-cnt > div > div:nth-child(1) > div > div.os-version > span'
+        ignored: True
+      actions:
+        - action: Click
+    - webDriver: FindElements
+      description: 'Check list Ubuntu và Click Tạo VM Ubuntu random'
+      webElement:
+        by: ByCSSSelector
+        value: '[ng-repeat="image in osImages.ubuntuOS"]'
+        ignored: True
+      checkElements:
+        countElements: 3
+        memberOfElements:
+          - value: 1-Ubuntu-16.04.5x64
+          - value: 1-Ubuntu-14.04.5x64
+          - value: 1-Ubuntu-18.04x64
+        declareElement4Click:
+          style: random
+          #range: 2
+      actions:
+        - action: Text
+        - action: Click
+    - webDriver: ExecuteScript
+      description: 'Chon Next để hoàn thành Tab Basic Configuration'
+      script: document.querySelector('div[ng-click="setTab(2)"]').click()
