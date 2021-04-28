@@ -9,6 +9,6 @@ resizeWindow:
 actions:
   - start_testing
   - login_portal
-  - create_vpc
+  - delete_vpc
   - screen_shot
   - end_testing
