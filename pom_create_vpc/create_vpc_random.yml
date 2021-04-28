@@ -1,5 +1,5 @@
 version: 0.0
-nameTest: CreateUbuntuRandomVersion
+nameTest: CreateVPCRandom
 browser: chome
 web: "https://portal3.vngcloud.vn/networks/list.html"
 resizeWindow:
