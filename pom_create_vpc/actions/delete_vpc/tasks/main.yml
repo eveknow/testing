@@ -1,0 +1,26 @@
+hooks:
+  checkResizeVM:
+    - webDriver: FindElement
+      description: 'Find VPC Random' 
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: 'div:contains("VPC-Random-11"):last').closest( ".row" ).find('[type="checkbox"]'
+        ignored: True
+      actions:
+        - action: Click 
+    - webDriver: FindElement
+      description: 'ClickDelete' 
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: 'button[ng-click="showAction()"]'
+        ignored: True
+      actions:
+        - action: Click
+    - webDriver: FindElement
+      description: 'ConfirmDelete'
+      webElement: 
+        by: ByCSSSelector #tìm kí tự mong muốn
+        value: '[ng-click="acceptDeleteNetwork()"]'
+        ignored: True
+      actions:
+        - action: Click
